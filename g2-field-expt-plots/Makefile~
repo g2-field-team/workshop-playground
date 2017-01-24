@@ -1,0 +1,15 @@
+# Makefile for plotting programs
+
+CXX = g++ -O2
+CC = gcc -O2
+
+FLAGS += $(root-config --cflags)
+FLAGS += $(root-config --libs)
+FLAGS += -I/usr/local/include -L/usr/local/lib -lfid
+
+TARGETS = $(patsubst src/%.cxx,bin/%,$(wildcard src/*.cxx))
+
+all: $(TARGETS)
+
+bin/%: src/%.cxx
+	$(CXX) $(FLAGS)
