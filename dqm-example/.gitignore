@@ -1,0 +1,4 @@
+*
+!.gitignore
+!setup.sh
+!fake_dqm_publisher.py
